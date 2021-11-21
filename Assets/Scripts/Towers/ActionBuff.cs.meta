@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 6fa2af4890c1cdc4daf67bd54ca39f68
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - BuffVisualAffectionGameObject: {fileID: 1672205067367777730, guid: 8c8ad2d2a9ddbac4490554a2df54e8ab,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

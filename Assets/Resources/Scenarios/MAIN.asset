@@ -1,0 +1,491 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fe1124098dcb194dbc2ce747299ac79, type: 3}
+  m_Name: MAIN
+  m_EditorClassIdentifier: 
+  ScenarioID: MAIN
+  Waves:
+  - WaveNumber: 1
+    Stages:
+    - Camo: 0
+      EnemyType: 6
+      EnemyCount: 15
+      Cooldown: 1
+      CooldownToNextStage: 0
+  - WaveNumber: 2
+    Stages:
+    - Camo: 0
+      EnemyType: 1
+      EnemyCount: 10
+      Cooldown: 0.5
+      CooldownToNextStage: 3
+    - Camo: 0
+      EnemyType: 2
+      EnemyCount: 5
+      Cooldown: 1
+      CooldownToNextStage: 0
+  - WaveNumber: 3
+    Stages:
+    - Camo: 0
+      EnemyType: 2
+      EnemyCount: 10
+      Cooldown: 0.5
+      CooldownToNextStage: 5
+    - Camo: 0
+      EnemyType: 1
+      EnemyCount: 15
+      Cooldown: 0.3
+      CooldownToNextStage: 0
+  - WaveNumber: 4
+    Stages:
+    - Camo: 0
+      EnemyType: 1
+      EnemyCount: 15
+      Cooldown: 0.15
+      CooldownToNextStage: 5
+    - Camo: 0
+      EnemyType: 3
+      EnemyCount: 5
+      Cooldown: 0.2
+      CooldownToNextStage: 3
+    - Camo: 0
+      EnemyType: 2
+      EnemyCount: 15
+      Cooldown: 0.3
+      CooldownToNextStage: 0
+  - WaveNumber: 5
+    Stages:
+    - Camo: 0
+      EnemyType: 4
+      EnemyCount: 5
+      Cooldown: 1
+      CooldownToNextStage: 4
+    - Camo: 0
+      EnemyType: 3
+      EnemyCount: 10
+      Cooldown: 0.5
+      CooldownToNextStage: 0
+  - WaveNumber: 6
+    Stages:
+    - Camo: 0
+      EnemyType: 2
+      EnemyCount: 20
+      Cooldown: 0.3
+      CooldownToNextStage: 4
+    - Camo: 0
+      EnemyType: 1
+      EnemyCount: 40
+      Cooldown: 0.15
+      CooldownToNextStage: 0
+  - WaveNumber: 7
+    Stages:
+    - Camo: 0
+      EnemyType: 2
+      EnemyCount: 20
+      Cooldown: 0.4
+      CooldownToNextStage: 4
+    - Camo: 0
+      EnemyType: 5
+      EnemyCount: 10
+      Cooldown: 1
+      CooldownToNextStage: 0
+  - WaveNumber: 8
+    Stages:
+    - Camo: 0
+      EnemyType: 2
+      EnemyCount: 25
+      Cooldown: 0.15
+      CooldownToNextStage: 4
+    - Camo: 0
+      EnemyType: 1
+      EnemyCount: 25
+      Cooldown: 0.15
+      CooldownToNextStage: 4
+    - Camo: 0
+      EnemyType: 5
+      EnemyCount: 10
+      Cooldown: 0.5
+      CooldownToNextStage: 0
+  - WaveNumber: 9
+    Stages:
+    - Camo: 0
+      EnemyType: 3
+      EnemyCount: 15
+      Cooldown: 0.5
+      CooldownToNextStage: 4
+    - Camo: 0
+      EnemyType: 5
+      EnemyCount: 10
+      Cooldown: 0.4
+      CooldownToNextStage: 0
+  - WaveNumber: 10
+    Stages:
+    - Camo: 1
+      EnemyType: 1
+      EnemyCount: 25
+      Cooldown: 0.5
+      CooldownToNextStage: 4
+    - Camo: 1
+      EnemyType: 3
+      EnemyCount: 15
+      Cooldown: 1
+      CooldownToNextStage: 0
+  - WaveNumber: 11
+    Stages:
+    - Camo: 1
+      EnemyType: 2
+      EnemyCount: 10
+      Cooldown: 0.5
+      CooldownToNextStage: 4
+    - Camo: 0
+      EnemyType: 5
+      EnemyCount: 15
+      Cooldown: 0.4
+      CooldownToNextStage: 3
+    - Camo: 0
+      EnemyType: 4
+      EnemyCount: 15
+      Cooldown: 0.15
+      CooldownToNextStage: 0
+  - WaveNumber: 12
+    Stages:
+    - Camo: 0
+      EnemyType: 1
+      EnemyCount: 50
+      Cooldown: 0.15
+      CooldownToNextStage: 5
+    - Camo: 0
+      EnemyType: 6
+      EnemyCount: 10
+      Cooldown: 1
+      CooldownToNextStage: 0
+  - WaveNumber: 13
+    Stages:
+    - Camo: 1
+      EnemyType: 1
+      EnemyCount: 10
+      Cooldown: 0.15
+      CooldownToNextStage: 1
+    - Camo: 0
+      EnemyType: 2
+      EnemyCount: 10
+      Cooldown: 0.15
+      CooldownToNextStage: 1
+    - Camo: 0
+      EnemyType: 3
+      EnemyCount: 10
+      Cooldown: 0.2
+      CooldownToNextStage: 1
+    - Camo: 0
+      EnemyType: 4
+      EnemyCount: 10
+      Cooldown: 0.3
+      CooldownToNextStage: 1
+    - Camo: 0
+      EnemyType: 5
+      EnemyCount: 10
+      Cooldown: 0.4
+      CooldownToNextStage: 0
+  - WaveNumber: 14
+    Stages:
+    - Camo: 0
+      EnemyType: 6
+      EnemyCount: 25
+      Cooldown: 1
+      CooldownToNextStage: 0
+  - WaveNumber: 15
+    Stages:
+    - Camo: 1
+      EnemyType: 6
+      EnemyCount: 15
+      Cooldown: 0.7
+      CooldownToNextStage: 0
+  - WaveNumber: 16
+    Stages:
+    - Camo: 0
+      EnemyType: 5
+      EnemyCount: 10
+      Cooldown: 0.3
+      CooldownToNextStage: 2
+    - Camo: 0
+      EnemyType: 3
+      EnemyCount: 25
+      Cooldown: 0.15
+      CooldownToNextStage: 1
+    - Camo: 0
+      EnemyType: 1
+      EnemyCount: 100
+      Cooldown: 0.1
+      CooldownToNextStage: 0
+  - WaveNumber: 17
+    Stages:
+    - Camo: 0
+      EnemyType: 7
+      EnemyCount: 1
+      Cooldown: 1
+      CooldownToNextStage: 0
+  - WaveNumber: 18
+    Stages:
+    - Camo: 0
+      EnemyType: 7
+      EnemyCount: 2
+      Cooldown: 3
+      CooldownToNextStage: 0
+    - Camo: 1
+      EnemyType: 6
+      EnemyCount: 10
+      Cooldown: 0.5
+      CooldownToNextStage: 0
+  - WaveNumber: 19
+    Stages:
+    - Camo: 0
+      EnemyType: 5
+      EnemyCount: 30
+      Cooldown: 0.3
+      CooldownToNextStage: 3
+    - Camo: 0
+      EnemyType: 6
+      EnemyCount: 5
+      Cooldown: 0.4
+      CooldownToNextStage: 0
+  - WaveNumber: 20
+    Stages:
+    - Camo: 0
+      EnemyType: 7
+      EnemyCount: 3
+      Cooldown: 5
+      CooldownToNextStage: 0
+  - WaveNumber: 21
+    Stages:
+    - Camo: 1
+      EnemyType: 6
+      EnemyCount: 40
+      Cooldown: 0.5
+      CooldownToNextStage: 0
+  - WaveNumber: 22
+    Stages:
+    - Camo: 0
+      EnemyType: 7
+      EnemyCount: 1
+      Cooldown: 0
+      CooldownToNextStage: 3
+    - Camo: 1
+      EnemyType: 3
+      EnemyCount: 35
+      Cooldown: 0.3
+      CooldownToNextStage: 3
+    - Camo: 0
+      EnemyType: 7
+      EnemyCount: 1
+      Cooldown: 0
+      CooldownToNextStage: 0
+  - WaveNumber: 23
+    Stages:
+    - Camo: 1
+      EnemyType: 7
+      EnemyCount: 1
+      Cooldown: 0
+      CooldownToNextStage: 4
+    - Camo: 0
+      EnemyType: 1
+      EnemyCount: 100
+      Cooldown: 0.1
+      CooldownToNextStage: 0
+  - WaveNumber: 24
+    Stages:
+    - Camo: 1
+      EnemyType: 6
+      EnemyCount: 25
+      Cooldown: 0.5
+      CooldownToNextStage: 4
+    - Camo: 0
+      EnemyType: 4
+      EnemyCount: 50
+      Cooldown: 0.3
+      CooldownToNextStage: 0
+  - WaveNumber: 25
+    Stages:
+    - Camo: 0
+      EnemyType: 7
+      EnemyCount: 10
+      Cooldown: 1
+      CooldownToNextStage: 0
+  - WaveNumber: 26
+    Stages:
+    - Camo: 0
+      EnemyType: 4
+      EnemyCount: 50
+      Cooldown: 0.15
+      CooldownToNextStage: 0
+  - WaveNumber: 27
+    Stages:
+    - Camo: 0
+      EnemyType: 7
+      EnemyCount: 2
+      Cooldown: 2
+      CooldownToNextStage: 2
+    - Camo: 1
+      EnemyType: 6
+      EnemyCount: 10
+      Cooldown: 0.15
+      CooldownToNextStage: 2
+    - Camo: 0
+      EnemyType: 7
+      EnemyCount: 2
+      Cooldown: 2
+      CooldownToNextStage: 0
+  - WaveNumber: 28
+    Stages:
+    - Camo: 0
+      EnemyType: 1
+      EnemyCount: 40
+      Cooldown: 0.1
+      CooldownToNextStage: 1
+    - Camo: 0
+      EnemyType: 2
+      EnemyCount: 30
+      Cooldown: 0.1
+      CooldownToNextStage: 2
+    - Camo: 0
+      EnemyType: 3
+      EnemyCount: 20
+      Cooldown: 0.1
+      CooldownToNextStage: 3
+    - Camo: 0
+      EnemyType: 4
+      EnemyCount: 10
+      Cooldown: 0.1
+      CooldownToNextStage: 0
+  - WaveNumber: 29
+    Stages:
+    - Camo: 1
+      EnemyType: 3
+      EnemyCount: 15
+      Cooldown: 0.2
+      CooldownToNextStage: 1
+    - Camo: 0
+      EnemyType: 6
+      EnemyCount: 15
+      Cooldown: 0.2
+      CooldownToNextStage: 0
+  - WaveNumber: 30
+    Stages:
+    - Camo: 0
+      EnemyType: 8
+      EnemyCount: 1
+      Cooldown: 1
+      CooldownToNextStage: 0
+  - WaveNumber: 31
+    Stages:
+    - Camo: 1
+      EnemyType: 7
+      EnemyCount: 5
+      Cooldown: 2
+      CooldownToNextStage: 0
+  - WaveNumber: 32
+    Stages:
+    - Camo: 0
+      EnemyType: 6
+      EnemyCount: 20
+      Cooldown: 0.2
+      CooldownToNextStage: 1
+    - Camo: 1
+      EnemyType: 6
+      EnemyCount: 20
+      Cooldown: 0.2
+      CooldownToNextStage: 1
+    - Camo: 0
+      EnemyType: 6
+      EnemyCount: 20
+      Cooldown: 0.2
+      CooldownToNextStage: 0
+  - WaveNumber: 33
+    Stages:
+    - Camo: 0
+      EnemyType: 5
+      EnemyCount: 50
+      Cooldown: 0.3
+      CooldownToNextStage: 0
+  - WaveNumber: 34
+    Stages:
+    - Camo: 0
+      EnemyType: 8
+      EnemyCount: 2
+      Cooldown: 5
+      CooldownToNextStage: 0
+  - WaveNumber: 35
+    Stages:
+    - Camo: 0
+      EnemyType: 5
+      EnemyCount: 15
+      Cooldown: 0.2
+      CooldownToNextStage: 2
+    - Camo: 0
+      EnemyType: 5
+      EnemyCount: 15
+      Cooldown: 0.2
+      CooldownToNextStage: 2
+    - Camo: 0
+      EnemyType: 5
+      EnemyCount: 15
+      Cooldown: 0.2
+      CooldownToNextStage: 2
+  - WaveNumber: 36
+    Stages:
+    - Camo: 1
+      EnemyType: 7
+      EnemyCount: 10
+      Cooldown: 1
+      CooldownToNextStage: 0
+  - WaveNumber: 37
+    Stages:
+    - Camo: 0
+      EnemyType: 5
+      EnemyCount: 35
+      Cooldown: 0.15
+      CooldownToNextStage: 0
+    - Camo: 0
+      EnemyType: 0
+      EnemyCount: 0
+      Cooldown: 0
+      CooldownToNextStage: 0
+  - WaveNumber: 38
+    Stages:
+    - Camo: 1
+      EnemyType: 5
+      EnemyCount: 25
+      Cooldown: 0.3
+      CooldownToNextStage: 1
+    - Camo: 0
+      EnemyType: 6
+      EnemyCount: 30
+      Cooldown: 0
+      CooldownToNextStage: 1
+    - Camo: 0
+      EnemyType: 3
+      EnemyCount: 100
+      Cooldown: 0.1
+      CooldownToNextStage: 0
+  - WaveNumber: 39
+    Stages:
+    - Camo: 1
+      EnemyType: 7
+      EnemyCount: 10
+      Cooldown: 2
+      CooldownToNextStage: 0
+  - WaveNumber: 40
+    Stages:
+    - Camo: 1
+      EnemyType: 8
+      EnemyCount: 10
+      Cooldown: 3
+      CooldownToNextStage: 0

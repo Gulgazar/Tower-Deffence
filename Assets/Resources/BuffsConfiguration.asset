@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b60ac4f4a9c4bd4fb2d36b86d5dbdf1, type: 3}
+  m_Name: BuffsConfiguration
+  m_EditorClassIdentifier: 
+  Buffs:
+  - ID: BUFF_ALCHEMIST
+    Buffs:
+    - Level: 1
+      Time: 10
+      CanSeeCamo: 0
+      CanBreakLead: 0
+      ActionSpeed: 0.2
+      ActionRange: 0
+      Damage: 0
+      ActionComponentsAffection: 0000000001000000
+    - Level: 2
+      Time: 15
+      CanSeeCamo: 0
+      CanBreakLead: 0
+      ActionSpeed: 0.5
+      ActionRange: 0
+      Damage: 0
+      ActionComponentsAffection: 0000000001000000
+    - Level: 3
+      Time: 20
+      CanSeeCamo: 1
+      CanBreakLead: 0
+      ActionSpeed: 0.5
+      ActionRange: 0
+      Damage: 0
+      ActionComponentsAffection: 0000000001000000
+    - Level: 4
+      Time: Infinity
+      CanSeeCamo: 1
+      CanBreakLead: 1
+      ActionSpeed: 0.5
+      ActionRange: 0
+      Damage: 0
+      ActionComponentsAffection: 0000000001000000

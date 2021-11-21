@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e2db1e57b2bd0f4697319eec4c60c43, type: 3}
+  m_Name: Spiker
+  m_EditorClassIdentifier: 
+  TowerType: 3
+  FisrtRow:
+  - ID: ROW_FIRST_UPGRADE_1
+    Name: 
+    Description: 
+    Cost: 0
+  - ID: ROW_FIRST_UPGRADE_2
+    Name: 
+    Description: 
+    Cost: 0
+  - ID: ROW_FIRST_UPGRADE_3
+    Name: 
+    Description: 
+    Cost: 0
+  - ID: ROW_FIRST_UPGRADE_4
+    Name: 
+    Description: 
+    Cost: 0
+  - ID: ROW_FIRST_UPGRADE_5
+    Name: 
+    Description: 
+    Cost: 0
+  SecondRow:
+  - ID: ROW_SECOND_UPGRADE_1
+    Name: 
+    Description: 
+    Cost: 0
+  - ID: ROW_SECOND_UPGRADE_2
+    Name: 
+    Description: 
+    Cost: 0
+  - ID: ROW_SECOND_UPGRADE_3
+    Name: 
+    Description: 
+    Cost: 0
+  - ID: ROW_SECOND_UPGRADE_4
+    Name: 
+    Description: 
+    Cost: 0
+  - ID: ROW_SECOND_UPGRADE_5
+    Name: 
+    Description: 
+    Cost: 0
+  ThirdRow:
+  - ID: ROW_THIRD_UPGRADE_1
+    Name: 
+    Description: 
+    Cost: 0
+  - ID: ROW_THIRD_UPGRADE_2
+    Name: 
+    Description: 
+    Cost: 0
+  - ID: ROW_THIRD_UPGRADE_3
+    Name: 
+    Description: 
+    Cost: 0
+  - ID: ROW_THIRD_UPGRADE_4
+    Name: 
+    Description: 
+    Cost: 0
+  - ID: ROW_THIRD_UPGRADE_5
+    Name: 
+    Description: 
+    Cost: 0

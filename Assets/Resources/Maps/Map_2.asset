@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a39d06df113beb4c83b40e2fb576563, type: 3}
+  m_Name: Map_2
+  m_EditorClassIdentifier: 
+  MapType: 1
+  MapPicture: {fileID: 2100000, guid: 4fe0b862233132a41bff408366926bf3, type: 2}
+  Soundtrack: {fileID: 8300000, guid: 05fa6532d5226824380251a5b6aa9317, type: 3}
+  Money: 900
+  Vectors:
+  - {x: -798, y: 0, z: 621}
+  - {x: -624, y: 0, z: 305}
+  - {x: -486, y: 0, z: 210}
+  - {x: -378, y: 0, z: 204}
+  - {x: -324, y: 0, z: 303}
+  - {x: -365, y: 0, z: 413}
+  - {x: -478, y: 0, z: 409}
+  - {x: -542, y: 0, z: 300}
+  - {x: -555, y: 0, z: 19}
+  - {x: -448, y: 0, z: -220}
+  - {x: -225, y: 0, z: -340}
+  - {x: -61, y: 0, z: -344}
+  - {x: 144, y: 0, z: -260}
+  - {x: 289, y: 0, z: -81}
+  - {x: 380, y: 0, z: 288}
+  - {x: 333, y: 0, z: 432}
+  - {x: 211, y: 0, z: 504}
+  - {x: 14, y: 0, z: 465}
+  - {x: -130, y: 0, z: 307}
+  - {x: -185, y: 0, z: 112}
+  - {x: -155, y: 0, z: -127}
+  - {x: 77, y: 0, z: -405}
+  - {x: 252, y: 0, z: -467}
+  - {x: 443, y: 0, z: -432}
+  - {x: 625, y: 0, z: -309}
+  - {x: 753, y: 0, z: -100}
+  - {x: 746.4, y: 0, z: 76.2}
+  - {x: 644.5, y: 0, z: 145.9}
+  - {x: 532, y: 0, z: 99.3}
+  - {x: 460.9, y: 0, z: -58.5}
+  - {x: 494.7, y: 0, z: -279}
+  - {x: 646, y: 0, z: -382.8}
+  - {x: 905, y: 0, z: -441}
+  BlockColliders:
+  - Position: {x: 66.1, y: 0, z: 41.5}
+    Rotation: {x: -0, y: -0, z: -0, w: 1}
+    ColliderType: 0
+    CubeSize: {x: 0, y: 0, z: 0}
+    SphereRadius: 180
+  - Position: {x: 119.7, y: 0, z: 219.4}
+    Rotation: {x: -0, y: -0, z: -0, w: 1}
+    ColliderType: 0
+    CubeSize: {x: 0, y: 0, z: 0}
+    SphereRadius: 180
+  - Position: {x: 611.5, y: 0.1, z: -65.7}
+    Rotation: {x: -0.0005765217, y: 0.13883217, z: -0.0047115954, w: 0.9903045}
+    ColliderType: 1
+    CubeSize: {x: 200, y: 50, z: 400}
+    SphereRadius: 0
