@@ -27,6 +27,10 @@ namespace TowerDeffence
         private Transform _enemiesPoolGameObject;
         [SerializeField]
         private Transform _projectilesPoolGameObject;
+        [SerializeField]
+        private AudioSource _audioSource;
+        [SerializeField]
+        private AudioClip _bloon;
         private GameManager _gameManager;
         private string _enemyTag;
 
@@ -49,7 +53,10 @@ namespace TowerDeffence
             foreach (ProjectileType type in Enum.GetValues(typeof(ProjectileType)))
             {
                 _projectilesPool.Add(type, new List<BaseProjectileComponent>());
-            }            
+            }
+            _audioSource.clip = _bloon;
+            _audioSource.volume = PlayerPrefs.GetFloat("Sound");
+
 
         }
 
@@ -98,13 +105,6 @@ namespace TowerDeffence
                 foreach (var projectile in pair.Value)
                 {
                     if (!projectile.enabled) continue;
-                    /*
-                    if (projectile.TargetsLeft == 0)
-                    {
-                        DestroyProjectile(projectile);
-                        continue;
-                    }
-                    */
                     if (projectile.LifeTime <= 0)
                     {
                         DestroyProjectile(projectile);
@@ -135,7 +135,6 @@ namespace TowerDeffence
             }
             newProjectile = Instantiate(_projectilePrefabs[type]);
             newProjectile.transform.parent = _projectilesPoolGameObject;
-            //var data = 
             _projectilesPool[type].Add(newProjectile);
             return newProjectile;
         }
@@ -163,10 +162,9 @@ namespace TowerDeffence
 
         #region Enemies
 
-        private void SpawnEnemyChildren(BaseEnemyComponent mainParent, int excessiveDamage, BaseProjectileComponent source = null)
+        private IEnumerator SpawnEnemyChildren(BaseEnemyComponent mainParent, int excessiveDamage, BaseProjectileComponent source = null)
         {
             List<EnemyType> childrenForSpawnList = new List<EnemyType>();
-            List<BaseEnemyComponent> children = new List<BaseEnemyComponent>();
             foreach(EnemyType child in _enemiesDatas[mainParent.Type].Children)
             {
                 GetEnemyChildrenForSpawn(childrenForSpawnList, child, excessiveDamage);
@@ -174,9 +172,10 @@ namespace TowerDeffence
             foreach(EnemyType child in childrenForSpawnList)
             {
                 var spawnedChild = SpawnEnemy(child, mainParent.transform.position, mainParent.NextPoint, mainParent.DistanceToNextPoint, mainParent.Camo);
-                children.Add(spawnedChild);
+                if (!(source is null)) source.AddAffectedChildren(spawnedChild); 
+                yield return new WaitForSeconds(0.03f);
             }
-            if(!(source is null)) source.AddAffectedChildren(children);
+            
 
             
 
@@ -184,7 +183,6 @@ namespace TowerDeffence
         private void GetEnemyChildrenForSpawn(List<EnemyType> ChildrenForSpawnList, EnemyType recursiveParent, int excessiveDamage)
         {
             excessiveDamage -= _enemiesDatas[recursiveParent].Health;
-            //Если шар не может быть убит потенциальным уроном, то появляется с полным ХП.
             if(excessiveDamage < 0)
             {
                 ChildrenForSpawnList.Add(recursiveParent);
@@ -202,9 +200,9 @@ namespace TowerDeffence
 
         public void KillEnemy(BaseEnemyComponent enemy, int excessiveDamage = 0, BaseProjectileComponent source = null)
         {
-            //print(excessiveDamage);
+            _audioSource.Play();
             _gameManager.AddMoney(1);
-            SpawnEnemyChildren(enemy, excessiveDamage, source);
+            StartCoroutine(SpawnEnemyChildren(enemy, excessiveDamage, source));
             DestroyEnemy(enemy);
         }
 
@@ -300,8 +298,6 @@ namespace TowerDeffence
             }
             if (enemy.NextPoint + 1 == _mainWayPoints.Count)
             {
-                //DestroyEnemy(enemy);
-
                 isReachedFinish = true;
                 return;
             }
@@ -314,11 +310,6 @@ namespace TowerDeffence
             if (enemy.IsBoss)
             {
                 enemy.MeshGameObject.LookAt(_mainWayPoints[enemy.NextPoint]);
-                /*
-                var rotation = enemy.MeshGameObject.rotation;
-                rotation.y = 0;
-                enemy.MeshGameObject.rotation = rotation;
-                */
             }
 
             isReachedFinish = false;

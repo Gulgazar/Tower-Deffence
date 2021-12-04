@@ -20,7 +20,7 @@ namespace TowerDeffence
         [SerializeField]
         private Transform _obstaclesPool;
         [SerializeField]
-        private List<Vector3> _editorWayPoints;// = new List<Vector3>();
+        private List<Vector3> _editorWayPoints;
         [SerializeField]
         private Text _healthText;
         [SerializeField]
@@ -44,9 +44,6 @@ namespace TowerDeffence
         private int _currentWave;
         private bool _progressSaved;
         private MapWayPoints _mapConfig;
-        //private static List<BaseEnemyComponent> _enemies = new List<BaseEnemyComponent>();
-
-        //private List<BaseProjectileComponent> _projectiles = new List<BaseProjectileComponent>();
 
         private List<Wave> _waves;
 
@@ -72,14 +69,14 @@ namespace TowerDeffence
             UpdateMoney();
 
 
-
+            //В случае уникальных карт можно было бы разнообразить сценарии (последовательность волн и врагов),
+            //Однако, в данном контексте, я этого делать не стал.
             _waves = Resources.Load<WavesSettings>("Scenarios/MAIN").Waves;
             _pools = GetComponent<PoolManager>();
-            _wayPointScale = _wayPointPrefab.localScale.x * 4; //MagicValue
+            _wayPointScale = _wayPointPrefab.localScale.x * 4; 
 
             for (int i = 0; i < _editorWayPoints.Count - 1; i++)
             {
-                //_editorWayPoints[i].gameObject.SetActive(false);
                 var editorRelativePosition = _editorWayPoints[i + 1] - _editorWayPoints[i];
                 var distance = editorRelativePosition.magnitude - _wayPointScale;
                 if (distance <= 0) print("ALLERT");
@@ -90,12 +87,10 @@ namespace TowerDeffence
                     var wayPoint = Instantiate(_wayPointPrefab);
                     wayPoint.position = _editorWayPoints[i] + editorRelativePosition.normalized * distanceBetweenWayPoints * (k + 1);
                     wayPoint.Rotate(0, Random.Range(0, 3) * 90, 0);
-                    //wayPoint.position = new Vector3(wayPoint.position.x, 0, wayPoint.position.z);
                     wayPoint.parent = _wayPointsPool;
                     _mainWayPoints.Add(wayPoint);
                 }
             }
-            //_editorWayPoints[_editorWayPoints.Count - 1].gameObject.SetActive(false);
             _spawnPoint = Instantiate(_wayPointPrefab);
             _spawnPoint.position = _editorWayPoints[0];
             _spawnPoint.Rotate(0, Random.Range(0, 3) * 90, 0);
@@ -113,7 +108,6 @@ namespace TowerDeffence
 
             foreach(var blockCfg in _mapConfig.BlockColliders)
             {
-                print(blockCfg);
                 var block = new GameObject();
                 
 
@@ -189,13 +183,10 @@ namespace TowerDeffence
 
                 
                 _currentWave = wave.WaveNumber;
-                //print("WAVE  " + wave.WaveNumber);
                 foreach (var stage in wave.Stages)
                 {
-                    //print("STAGE " + stage.EnemyType);
                     for (int i = 0; i < stage.EnemyCount; i++)
                     {
-                        //print("ENEMY  " + i);
                         _pools.SpawnEnemy(stage.EnemyType, _spawnPoint.position, 0, _distancesToNextWayPoint[0], stage.Camo);
                         yield return new WaitForSeconds(stage.Cooldown);
                     }
@@ -220,7 +211,6 @@ namespace TowerDeffence
 
         private void Win()
         {
-            //SaveProgress();
             _progressSaved = true;
             Time.timeScale = 0f;
             _gameResultPanel.SetActive(true);
@@ -228,7 +218,6 @@ namespace TowerDeffence
         }
         private void Lose()
         {
-            //SaveProgress();
             _progressSaved = true;
             Time.timeScale = 0f;
             _gameResultPanel.SetActive(true);
@@ -243,7 +232,6 @@ namespace TowerDeffence
         public void ReturnToMenu_UnityEditor()
         {
             Time.timeScale = 1f;
-            //if(!_progressSaved) SaveProgress();
             SceneManager.LoadScene("MainMenu");
         }
         

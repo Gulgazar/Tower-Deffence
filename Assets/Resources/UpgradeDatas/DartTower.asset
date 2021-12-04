@@ -17,19 +17,19 @@ MonoBehaviour:
   - ID: ROW_FIRST_UPGRADE_1
     Name: "\u041E\u0441\u0442\u0440\u044B\u0435 \u0432\u044B\u0441\u0442\u0440\u0435\u043B\u044B"
     Description: 
-    Cost: 140
+    Cost: 300
   - ID: ROW_FIRST_UPGRADE_2
     Name: "\u0414\u0440\u043E\u0442\u0438\u043A\u0438-\u0431\u0440\u0438\u0442\u0432\u044B"
     Description: 
-    Cost: 220
+    Cost: 700
   - ID: ROW_FIRST_UPGRADE_3
     Name: "\u0428\u0438\u043F\u043E\u043F\u0443\u043B\u044C\u0442\u0430"
     Description: 
-    Cost: 300
+    Cost: 2000
   - ID: ROW_FIRST_UPGRADE_4
     Name: "\u0414\u0436\u0430\u0433\u0433\u0435\u0440\u043D\u0430\u0443\u0442"
     Description: 
-    Cost: 1800
+    Cost: 6000
   - ID: ROW_FIRST_UPGRADE_5
     Name: "\u0423\u043B\u044C\u0442\u0440\u0430\u0434\u0436\u0430\u0433\u0433\u0435\u0440\u043D\u0430\u0443\u0442"
     Description: 
@@ -38,20 +38,20 @@ MonoBehaviour:
   - ID: ROW_SECOND_UPGRADE_1
     Name: "\u0411\u044B\u0441\u0442\u0440\u044B\u0435 \u0432\u044B\u0441\u0442\u0440\u0435\u043B\u044B"
     Description: 
-    Cost: 100
+    Cost: 200
   - ID: ROW_SECOND_UPGRADE_2
     Name: "\u041E\u0447\u0435\u043D\u044C \u0431\u044B\u0441\u0442\u0440\u044B\u0435
       \u0432\u044B\u0441\u0442\u0440\u0435\u043B\u044B"
     Description: 
-    Cost: 190
+    Cost: 800
   - ID: ROW_SECOND_UPGRADE_3
     Name: "\u0422\u0440\u043E\u0439\u043D\u043E\u0439 \u0432\u044B\u0441\u0442\u0440\u0435\u043B"
     Description: 
-    Cost: 400
+    Cost: 2200
   - ID: ROW_SECOND_UPGRADE_4
     Name: "\u0414\u043E\u0436\u0434\u044C \u0438\u0437 \u0434\u0440\u043E\u0442\u0438\u043A\u043E\u0432"
     Description: 
-    Cost: 8000
+    Cost: 7000
   - ID: ROW_SECOND_UPGRADE_5
     Name: "\u0414\u0440\u043E\u0442\u0438\u043A\u043E\u0432\u044B\u0439 \u0448\u0442\u043E\u0440\u043C"
     Description: 
@@ -61,19 +61,19 @@ MonoBehaviour:
     Name: "\u0414\u0430\u043B\u044C\u043D\u043E\u0431\u043E\u0439\u043D\u044B\u0435
       \u0434\u0440\u043E\u0442\u0438\u043A\u0438"
     Description: 
-    Cost: 90
+    Cost: 350
   - ID: ROW_THIRD_UPGRADE_2
     Name: "\u0417\u043E\u0440\u043A\u0438\u0439 \u0433\u043B\u0430\u0437"
     Description: 
-    Cost: 200
+    Cost: 400
   - ID: ROW_THIRD_UPGRADE_3
     Name: "\u0410\u0440\u0431\u0430\u043B\u0435\u0442"
     Description: 
-    Cost: 625
+    Cost: 2300
   - ID: ROW_THIRD_UPGRADE_4
     Name: "\u041C\u0435\u0442\u043A\u0438\u0439 \u0441\u0442\u0440\u0435\u043B\u043E\u043A"
     Description: 
-    Cost: 2000
+    Cost: 5850
   - ID: ROW_THIRD_UPGRADE_5
     Name: "\u041C\u0430\u0441\u0442\u0435\u0440 \u0430\u0440\u0431\u0430\u043B\u0435\u0442\u0430"
     Description: 

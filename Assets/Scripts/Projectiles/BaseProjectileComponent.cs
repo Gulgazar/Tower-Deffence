@@ -7,13 +7,7 @@ namespace TowerDeffence
     public abstract class BaseProjectileComponent : MonoBehaviour
     {
 
-        /*
-        public float Speed = 500;
-        public int Damage;
-        
-        public bool CanBreakLead;
-        public bool CanSeeCamo;
-        */
+
         public ActionAttack SourceTower;
         protected List<BaseEnemyComponent> _affectedEnemies = new List<BaseEnemyComponent>();
         public float TargetsLeft;
@@ -21,8 +15,7 @@ namespace TowerDeffence
         public ProjectileType ProjectileType;
         public ProjectileType ChildrenType;
         public int ChildreCount;
-        
-        //public float Degree;
+
 
         public abstract void ConfigureProjectile(ActionAttack source);
 
@@ -33,9 +26,9 @@ namespace TowerDeffence
             Helper.ProjectileHandler.DestroyProjectile(this);
         }
 
-        public void AddAffectedChildren(IEnumerable<BaseEnemyComponent> enemies)
+        public void AddAffectedChildren(BaseEnemyComponent enemy)
         {
-            _affectedEnemies.AddRange(enemies);
+            _affectedEnemies.Add(enemy);
         }
 
         public void ClearEnemiesList()

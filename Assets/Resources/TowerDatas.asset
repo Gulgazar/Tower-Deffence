@@ -24,11 +24,11 @@ MonoBehaviour:
   - TowerType: 3
     Name: Spiker
     Cost: 550
-    Image: {fileID: 0}
+    Image: {fileID: 21300000, guid: 9501ceef601aedc4aa1a880f65591d16, type: 3}
   - TowerType: 4
-    Name: 
-    Cost: 0
-    Image: {fileID: 0}
+    Name: Sniper
+    Cost: 400
+    Image: {fileID: 21300000, guid: f95b914acb5a9bc4aa3ff8c4f551589e, type: 3}
   - TowerType: 5
     Name: 
     Cost: 0

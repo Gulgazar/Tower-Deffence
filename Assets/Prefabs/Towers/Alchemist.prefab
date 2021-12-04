@@ -85,9 +85,8 @@ MonoBehaviour:
   ExlosionRange: 300
   ProjectileRange: 500
   ProjectileSpeed: 1000
-  targetType: 1
-  TargetPriority: 1
   ProjectileType: 6
+  TargetPriority: 0
   ProjectileDegree: 0
 --- !u!136 &9142666535435927657
 CapsuleCollider:

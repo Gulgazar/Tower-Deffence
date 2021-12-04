@@ -30,14 +30,11 @@ namespace TowerDeffence
         {
             for (int i = 0; i < Enemies.Count; i++)
             {
-                print(i);
                 if ((transform.position - Enemies[i].transform.position).sqrMagnitude <= Mathf.Pow(ActionRange, 2))
                 {
-                    print('f');
                     return true;
                 }
             }
-            //print('a');
             return false;
         }
     }

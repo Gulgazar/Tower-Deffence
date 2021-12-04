@@ -15,11 +15,6 @@ namespace TowerDeffence
     {
         public TowerType TowerType;
         public Transform Mesh;
-        //public bool CanSeeCamo = false;
-        //public bool CanBreakLead = false;
-
-        //private const int c_upgradesRows = 3;
-
         public Transform MainActionRange;
         private List<BaseEnemyComponent> _enemies;
         private List<ActionBase> _towers;
@@ -29,7 +24,6 @@ namespace TowerDeffence
         private List<string> buffsForRemove = new List<string>();
         private int[] _maxUpgrades = new int[] { 5, 5, 5 };
         private int[] _currentUpgrades = new int[] { 0, 0, 0 };
-        //public UpgradeData[] GetUpgades => _upgradeDatas;
 
         private void Update()
         {
@@ -84,11 +78,11 @@ namespace TowerDeffence
             _enemies = enemies;
             _towers = towers;
             _waypoints = wayPoints; 
-            //_towers.AddRange(ThisActionComponents);
             foreach(var actionComponent in ThisActionComponents)
             {
                 if (actionComponent is ActionNotargetAttack) ((ActionNotargetAttack)actionComponent).Enemies = _enemies;
                 if (actionComponent is ActionTargetAttack) ((ActionTargetAttack)actionComponent).Enemies = _enemies;
+                if (actionComponent is ActionUniqueSniper) ((ActionUniqueSniper)actionComponent).Enemies = _enemies;
                 if (actionComponent is ActionBuff) ((ActionBuff)actionComponent).Towers = _towers;
                 if (actionComponent is ActionWaypathTrap) ((ActionWaypathTrap)actionComponent).Waypoints = _waypoints;
             }

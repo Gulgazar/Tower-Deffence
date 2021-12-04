@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4f9a4b2b687fa8a4b8f3b88a4e34bf10, type: 2}
+  - {fileID: 2100000, guid: d41290b225644d64d871a298412096b3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,13 +106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0dccdf2e81c0041a2a4997fbb09ab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProjectileType: 0
-  LifeTime: 1
-  Speed: 500
-  Damage: 0
+  SourceTower: {fileID: 0}
   TargetsLeft: 0
-  CanBreakLead: 0
-  CanSeeCamo: 0
+  LifeTime: 1
+  ProjectileType: 0
   ChildrenType: 0
   ChildreCount: 0
-  ExplosionRange: 0

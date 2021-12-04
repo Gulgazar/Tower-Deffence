@@ -36,23 +36,6 @@ namespace TowerDeffence
 
 
 
-        /*
-        public void Call(UpgradeData[] _datas)
-        {
-
-            for (int i = 0; i < _buttons.Length; i++)
-            {
-                int b = i;
-                _buttons[i].onClick.AddListener(() => UpRow(b));
-                _buttons[i].interactable = _datas[i].Current != _datas[i].Max;
-            }
-        }
-
-        private void UpRow(int i)
-        {
-            Debug.Log(i);
-        }
-        */
 
     }
 }

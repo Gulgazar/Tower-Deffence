@@ -11,7 +11,6 @@ namespace TowerDeffence
         public EnemyType Type;
         public EnemyType[] Children;
         public bool IsBoss;
-        //public MeshRenderer MeshRenderer;
         public int Health;
         public int NextPoint = 0;
         public float SpeedModifier;
@@ -19,16 +18,6 @@ namespace TowerDeffence
         public bool Lead;
         public bool Camo;        
         public int LastWave;
-        /*
-        public void GetDamage(int damage)
-        {
-            Health -= damage;
-            if (Health > 0) ChangeColor();
-        }
-        */
-
-
-        //public abstract void GetDamage(int damage);
 
         public void GetDamage(ActionAttack sourceTower, BaseProjectileComponent source = null)
         {
@@ -51,36 +40,4 @@ namespace TowerDeffence
 
     }
 
-    /*
-    public class BossEnemy : BaseEnemyComponent
-    {
-        public //override
-            void GetDamage(int damage)
-        {
-            Health -= damage;
-            if(Health <= 0)
-            {
-                Helper.Destroyer.DestroyEnemy(this);
-            }
-        }
-    }
-
-    public class CommonEnemy : BaseEnemyComponent
-    {
-        public //override
-            void GetDamage(int damage)
-        {
-            Health -= damage;
-            if(Health == 0)
-            {
-                Helper.Destroyer.DestroyEnemy(this);
-            }
-            if(Health < 0)
-            {
-                int excessiveDamage = -Health;
-                Helper.Destroyer.DestroyEnemy(this, excessiveDamage);
-            }
-        }
-    }
-*/
 }

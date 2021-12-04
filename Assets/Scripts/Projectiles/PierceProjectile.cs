@@ -19,13 +19,11 @@ namespace TowerDeffence
         private void OnTriggerEnter(Collider other)
         {
             if (other.tag != Helper.EnemyTag) return;
-            //print("ENEMYCONNECT");
             var enemy = other.GetComponent<BaseEnemyComponent>();
             if (_affectedEnemies.Contains(enemy)) return;
             if (enemy.Camo && !SourceTower.CanSeeCamo) return;
             if (enemy.Lead && !SourceTower.CanBreakLead)
             {
-                //Попадание по свинцу без возможность пробтия автоматически уничтожает снаряд
                 TargetsLeft = 0;
                 DestroyProjectile();
                 return;

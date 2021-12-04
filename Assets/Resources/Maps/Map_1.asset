@@ -41,4 +41,34 @@ MonoBehaviour:
   - {x: 145, y: 0, z: -257}
   - {x: 72, y: 0, z: -334}
   - {x: 60, y: 0, z: -720}
-  BlockColliders: []
+  BlockColliders:
+  - Position: {x: 888, y: 62.129883, z: -580.4}
+    Rotation: {x: -0, y: -0, z: -0, w: 1}
+    ColliderType: 0
+    CubeSize: {x: 0, y: 0, z: 0}
+    SphereRadius: 200
+  - Position: {x: -681, y: 62.129883, z: -636}
+    Rotation: {x: -0, y: -0, z: -0, w: 1}
+    ColliderType: 0
+    CubeSize: {x: 0, y: 0, z: 0}
+    SphereRadius: 200
+  - Position: {x: -515, y: 62.129883, z: 621}
+    Rotation: {x: -0, y: -0, z: -0, w: 1}
+    ColliderType: 0
+    CubeSize: {x: 0, y: 0, z: 0}
+    SphereRadius: 200
+  - Position: {x: -738, y: 62.129883, z: 393}
+    Rotation: {x: -0, y: -0, z: -0, w: 1}
+    ColliderType: 0
+    CubeSize: {x: 0, y: 0, z: 0}
+    SphereRadius: 200
+  - Position: {x: -855, y: 62.129883, z: -1}
+    Rotation: {x: -0, y: -0, z: -0, w: 1}
+    ColliderType: 0
+    CubeSize: {x: 0, y: 0, z: 0}
+    SphereRadius: 200
+  - Position: {x: 773, y: 62.129883, z: 629}
+    Rotation: {x: -0, y: -0, z: -0, w: 1}
+    ColliderType: 0
+    CubeSize: {x: 0, y: 0, z: 0}
+    SphereRadius: 200

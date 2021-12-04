@@ -36,7 +36,6 @@ namespace TowerDeffence
         private void Awake()
         {
             Helper.ExpManager = this;
-            //ResetExpToZero();
             foreach (TowerType type in Enum.GetValues(typeof(TowerType)))
             {
                 LevelDatas.Add(type, new LevelData() { Level = PlayerPrefs.GetInt(type.ToString() + "Level", 0), Exp = PlayerPrefs.GetInt(type.ToString() + "Exp", 0) });

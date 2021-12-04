@@ -40,6 +40,10 @@ namespace TowerDeffence
         private Text[] _expTexts;
         [SerializeField]
         private Text[] _levelTexts;
+        [SerializeField]
+        private Dropdown[] _targetPriorityDropdowns;
+        [SerializeField]
+        private GameObject[] _targetPriorityPanels;
 
 
         private PoolManager _pools;
@@ -206,7 +210,13 @@ namespace TowerDeffence
             }
         }
 
-       
+        public void SetTargetPriority(int priority)
+        {
+            if (_selectedTower is null) return;
+            var targetAttackComponent = _selectedTower.ThisActionComponents.FirstOrDefault(t => t is ActionTargetAttack);
+            if (targetAttackComponent is null) return;
+            ((ActionTargetAttack)targetAttackComponent).TargetPriority = (SingleTargetPriority)priority;
+        }
 
         public void BuyUpgrade(UpgradeRowType upgradeRowType)
         {
@@ -339,22 +349,20 @@ namespace TowerDeffence
 
                 _leftOpen.time = _leftOpen.length;
                 _leftOpen.speed = -2;
-                _leftPanelAnimation.Play();// ("LeftPanelAnimation");
+                _leftPanelAnimation.Play();
 
 
                 _upgradePanelLeft.Open = false;
-                //_leftPanelAnimation.Play("LeftPanelClose");
             }
             if (_upgradePanelRight.Open)
             {
 
                 _rightOpen.time = _leftOpen.length;
                 _rightOpen.speed = -2;
-                _rightPanelAnimation.Play();// ("LeftPanelAnimation");
+                _rightPanelAnimation.Play();
 
 
                 _upgradePanelRight.Open = false;
-                //_leftPanelAnimation.Play("LeftPanelClose");
             }
         }
 
@@ -367,8 +375,8 @@ namespace TowerDeffence
         private void SetPanelParameters()
         {
             if (_selectedTower == null) return;
-
-            for(int p = 0; p < 2; p++)
+            var attackComponent = _selectedTower.ThisActionComponents.FirstOrDefault(t => t is ActionTargetAttack);
+            for (int p = 0; p < 2; p++)
             {
                 if(Helper.ExpManager.GetExpToLevelup(_selectedTower.TowerType, out var exp))
                 {
@@ -377,6 +385,18 @@ namespace TowerDeffence
                 else
                 {
                     _expTexts[p].text = "Max Level!";
+                }
+
+                
+                if (!(attackComponent is null))
+                {
+                    print(_selectedTower);
+                    _targetPriorityPanels[p].SetActive(true);
+                    _targetPriorityDropdowns[p].value = (int)((ActionTargetAttack)attackComponent).TargetPriority;
+                }
+                else
+                {
+                    _targetPriorityPanels[p].SetActive(false);
                 }
 
                 _levelTexts[p].text = Helper.ExpManager.GetLevel(_selectedTower.TowerType).ToString();
@@ -401,11 +421,10 @@ namespace TowerDeffence
                     else
                     {
                         _buttons[p][i].ThisButton.interactable = true;
-                        //print(ConvertValuesToId(_selectedTower.TowerType, _buttons[p][i].UpgradeRowType, _currentUpgrades[i] + 1));
                         string newUpgradeId = ConvertValuesToId(_selectedTower.TowerType, _buttons[p][i].UpgradeRowType, _currentUpgrades[i] + 1);
                         string oldUpgradeId = ConvertValuesToId(_selectedTower.TowerType, _buttons[p][i].UpgradeRowType, _currentUpgrades[i]);
 
-                        _buttons[p][i].Text.text = _upgradeDatas[newUpgradeId].Name;
+                        _buttons[p][i].Text.text = _upgradeDatas[newUpgradeId].Cost + "$\n" + _upgradeDatas[newUpgradeId].Name;
                         if (_upgradeDatas.ContainsKey(oldUpgradeId)) _buttonsText[p][i].text = _upgradeDatas[oldUpgradeId].Name;
                         else _buttonsText[p][i].text = "No upgrades";
 

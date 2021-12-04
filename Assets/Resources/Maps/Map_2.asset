@@ -62,7 +62,22 @@ MonoBehaviour:
     CubeSize: {x: 0, y: 0, z: 0}
     SphereRadius: 180
   - Position: {x: 611.5, y: 0.1, z: -65.7}
-    Rotation: {x: -0.0005765217, y: 0.13883217, z: -0.0047115954, w: 0.9903045}
+    Rotation: {x: -0.0005765218, y: 0.13883217, z: -0.0047115963, w: 0.9903045}
     ColliderType: 1
     CubeSize: {x: 200, y: 50, z: 400}
+    SphereRadius: 0
+  - Position: {x: -462, y: 9, z: -627}
+    Rotation: {x: 0.0021815891, y: -0.44306588, z: -0.0042171683, w: 0.8964765}
+    ColliderType: 1
+    CubeSize: {x: 600, y: 50, z: 800}
+    SphereRadius: 0
+  - Position: {x: -819, y: 8, z: -261}
+    Rotation: {x: 0.0014556359, y: -0.28902808, z: -0.0045193983, w: 0.9573088}
+    ColliderType: 1
+    CubeSize: {x: 600, y: 50, z: 800}
+    SphereRadius: 0
+  - Position: {x: 676, y: -7, z: 605}
+    Rotation: {x: 0.002040569, y: -0.41309944, z: -0.0042871805, w: 0.91067356}
+    ColliderType: 1
+    CubeSize: {x: 600, y: 50, z: 1200}
     SphereRadius: 0

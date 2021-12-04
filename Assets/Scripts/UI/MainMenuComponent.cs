@@ -38,8 +38,6 @@ namespace TowerDeffence
             _music = PlayerPrefs.GetFloat("Music", 1);
             _musicSlider.value = _music;
             _musicValueText.text = Mathf.RoundToInt(_music * 100).ToString();
-            print(_sound);
-            print(_music);
             _audioSource.volume = _music;
         }
         public void OnSoundChange_UnityEditror(float value)

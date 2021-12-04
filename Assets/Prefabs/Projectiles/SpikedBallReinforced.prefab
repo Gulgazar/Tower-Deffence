@@ -59,8 +59,8 @@ MonoBehaviour:
   TargetsLeft: 0
   LifeTime: 1
   ProjectileType: 0
-  ChildrenType: 2
-  ChildreCount: 5
+  ChildrenType: 0
+  ChildreCount: 0
 --- !u!135 &739056439307587749
 SphereCollider:
   m_ObjectHideFlags: 0

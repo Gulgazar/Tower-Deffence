@@ -29,12 +29,6 @@ namespace TowerDeffence
         {
             _collisions++;
             _cds.Add(other);
-            /*
-            foreach(var meshrenderer in other.GetComponentsInChildren<MeshRenderer>())
-            {
-                meshrenderer.materials[1].SetColor("_Color", _colorAffected);
-            }
-            */
             DisableToBuild = true;
         }
 

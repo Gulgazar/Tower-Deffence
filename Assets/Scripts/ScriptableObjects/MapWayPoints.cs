@@ -15,13 +15,11 @@ namespace TowerDeffence
         public int Money;
         
 
-        //public Transform[] Waypoints;
         [Serializable]
         public class BlockedTerritory
         {
             public Vector3 Position;
             public Quaternion Rotation;
-            //public Collider ColliderThis;
             public ColliderType ColliderType;
             public Vector3 CubeSize;
             public float SphereRadius;
@@ -31,10 +29,7 @@ namespace TowerDeffence
         {
             Sphere,
             Box,
-            Capsule
         }
-
-        //[NonSerialized]
         public List<Vector3> Vectors;
         public List<BlockedTerritory> BlockColliders;
 
@@ -79,6 +74,29 @@ namespace TowerDeffence
             }
 
         }
+        [ContextMenu("RebuildBlockedTerritory")]
+        private void SetBlockedTerritory()
+        {
+            var blockedPool = GameObject.FindGameObjectWithTag("BlockedTerritoryPool").transform;
+            foreach (var cfg in BlockColliders)
+            {
+                var obst = new GameObject();
+                obst.transform.position = cfg.Position;
+                if(cfg.ColliderType == ColliderType.Box)
+                {
+                    var col = obst.AddComponent<BoxCollider>();
+                    col.size = cfg.CubeSize;                    
+                }
+                else if (cfg.ColliderType == ColliderType.Sphere)
+                {
+                    var col = obst.AddComponent<SphereCollider>();
+                    col.radius = cfg.SphereRadius;
+                }
+                obst.transform.rotation = cfg.Rotation;
+                obst.transform.parent = blockedPool;
+            }
+        }
+
     }
 
 }

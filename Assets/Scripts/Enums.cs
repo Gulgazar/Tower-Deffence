@@ -15,10 +15,9 @@ namespace TowerDeffence
 
     public enum SingleTargetPriority
     {
-        First = 1,
-        Nearest = 2,
-        Strong = 3,
-        //Last = 4
+        First = 0,
+        Nearest = 1,
+        Strong = 2,
     }
 
     public enum TargetType
@@ -32,7 +31,7 @@ namespace TowerDeffence
     public enum MapType
     {
         Map_Grassfields,
-        Map_Test2
+        Map_Winterlake
     }
 
     public enum Difficulty
@@ -84,7 +83,6 @@ namespace TowerDeffence
 
     public enum TowerType
     {
-        //Undefined = 0,
         DartTower = 1,
         BombShooter = 2,
         Spiker = 3,

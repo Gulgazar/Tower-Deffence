@@ -6,7 +6,6 @@ namespace TowerDeffence
 {
     public abstract class ActionAttack : ActionBase
     {
-        //public TowerType TowerType;
 
         public Transform AttackPoint;
         public List<BaseEnemyComponent> Enemies;
@@ -20,8 +19,6 @@ namespace TowerDeffence
         public float ExlosionRange;
         public float ProjectileRange;
         public float ProjectileSpeed;
-        public TargetType targetType;
-        public SingleTargetPriority TargetPriority;
         public ProjectileType ProjectileType;
 
         protected Quaternion _defaultAttackPointRotation;
@@ -32,8 +29,5 @@ namespace TowerDeffence
         {
             _defaultAttackPointRotation = AttackPoint.localRotation;
         }
-
-
-        //protected abstract bool DefineTowerTarget(out BaseEnemyComponent enemy);
     }
 }

@@ -6,13 +6,12 @@ namespace TowerDeffence
 {
     public class ActionTargetAttack : ActionAttack
     {
+        public SingleTargetPriority TargetPriority;
         public float ProjectileDegree;
         public override bool PerformAction()
         {
-            //print("PERFORM");
             if(DefineSingleTowerTarget(out var enemy))
             {
-                //print("SUCSESS");
 
                 transform.LookAt(new Vector3(enemy.transform.position.x, transform.position.y, enemy.transform.position.z));
 
@@ -31,7 +30,7 @@ namespace TowerDeffence
 
         
 
-        private bool DefineSingleTowerTarget(out BaseEnemyComponent enemy)
+        protected virtual bool DefineSingleTowerTarget(out BaseEnemyComponent enemy)
         {
 
             enemy = default;
@@ -80,7 +79,7 @@ namespace TowerDeffence
                     for (int i = 0; i < enemiesInRange.Count; i++)
                     {
                         var sqrMagnitude = (transform.position - Enemies[i].transform.position).sqrMagnitude;
-                        if (sqrMagnitude > sqrDistance)
+                        if (sqrMagnitude < sqrDistance)
                         {
                             sqrDistance = sqrMagnitude;
                             enemy = enemiesInRange[i];

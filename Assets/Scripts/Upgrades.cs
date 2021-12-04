@@ -28,14 +28,6 @@ namespace TowerDeffence
                     buff.ID = buffType.ID + "_" + buff.Level;
                     _buffs.Add((buff.ID), buff);
                 }
-                /*
-                foreach(var buffLevel in buffType.Buffs)
-                {
-                    buffLevel.ID = buffType.ID + "_" + buffLevel.Level;
-                    _buffs.Add((), buffLevel);
-                    //Debug.Log(buffLevel.Level +""+ buffType.ID);
-                }
-                */
             }
         }
 
@@ -64,7 +56,8 @@ namespace TowerDeffence
                     Debug.Log(ID + " Performed to " + tower);
                     break;
                 case TowerType.SniperTower:
-
+                    Upgrade_Sniper(tower, ID);
+                    Debug.Log(ID + " Performed to " + tower);
                     break;
                 case TowerType.AceTower:
 
@@ -84,78 +77,136 @@ namespace TowerDeffence
                     break;
 
             }
-        } 
+        }
+
+        private void Upgrade_Sniper(Tower tower, string ID)
+        {
+            var attackSniper = tower.GetComponent<ActionUniqueSniper>();
+            Debug.Log(tower + "  " + ID);
+            switch (ID)
+            {
+                
+                //ROW 1
+                case "SNIPERTOWER_ROW_FIRST_UPGRADE_1":
+                    attackSniper.Damage += 2;
+                    break;
+                case "SNIPERTOWER_ROW_FIRST_UPGRADE_2":
+                    attackSniper.Damage += 3;
+                    attackSniper.CanBreakLead = true;
+                    break;
+                case "SNIPERTOWER_ROW_FIRST_UPGRADE_3":
+                    attackSniper.Damage += 4;
+                    attackSniper.AdditionalLeadDamage += 4;
+                    break;
+                case "SNIPERTOWER_ROW_FIRST_UPGRADE_4":
+                    attackSniper.AdditionalBossDamage += 15;
+                    break;
+                case "SNIPERTOWER_ROW_FIRST_UPGRADE_5":
+                    attackSniper.AdditionalBossDamage += 35;
+                    break;
+                //ROW 2
+                case "SNIPERTOWER_ROW_SECOND_UPGRADE_1":
+                    attackSniper.CanSeeCamo = true;
+                    break;
+                case "SNIPERTOWER_ROW_SECOND_UPGRADE_2":
+                    attackSniper.MaxTargets += 1;
+                    break;
+                case "SNIPERTOWER_ROW_SECOND_UPGRADE_3":
+                    attackSniper.MaxTargets += 2;
+                    break;
+                case "SNIPERTOWER_ROW_SECOND_UPGRADE_4":
+                    attackSniper.Damage += 3;
+                    break;
+                case "SNIPERTOWER_ROW_SECOND_UPGRADE_5":
+                    attackSniper.MaxTargets += 3;
+                    break;
+                //ROW 3
+                case "SNIPERTOWER_ROW_THIRD_UPGRADE_1":
+                    attackSniper.ActionsPerSecond *= 1.3f;
+                    break;
+                case "SNIPERTOWER_ROW_THIRD_UPGRADE_2":
+                    attackSniper.ActionsPerSecond *= 1.4f;
+                    break;
+                case "SNIPERTOWER_ROW_THIRD_UPGRADE_3":
+                    attackSniper.ActionsPerSecond *= 1.7f;
+                    break;
+                case "SNIPERTOWER_ROW_THIRD_UPGRADE_4":
+                    attackSniper.ActionsPerSecond *= 2f;
+                    break;
+                case "SNIPERTOWER_ROW_THIRD_UPGRADE_5":
+                    attackSniper.Damage += 2;
+                    attackSniper.ActionsPerSecond *= 3f;
+                    break;
+
+            }
+        }
+
         private void Upgrade_Spiker(Tower tower, string ID)
         {
-            var targetAttack = tower.GetComponent<ActionTargetAttack>();
+            var notargetAttack = tower.GetComponent<ActionNotargetAttack>();
             Debug.Log(tower + "  " + ID);
             switch (ID)
             {
                 //ROW 1
                 case "SPIKER_ROW_FIRST_UPGRADE_1":
-                    targetAttack.ExlosionRange *= 1.5f;
-                    targetAttack.MaxTargets += 6;
+                    notargetAttack.MaxTargets += 2;
                     break;
                 case "SPIKER_ROW_FIRST_UPGRADE_2":
-                    targetAttack.MaxTargets += 6;
-                    targetAttack.Damage += 1;
+                    notargetAttack.MaxTargets += 2;
+                    notargetAttack.Damage += 1;
                     break;
                 case "SPIKER_ROW_FIRST_UPGRADE_3":
-                    targetAttack.ExlosionRange *= 1.5f;
-                    targetAttack.Damage += 1;
-                    targetAttack.MaxTargets += 20;
+                    notargetAttack.Damage += 1;
+                    notargetAttack.MaxTargets += 2;
                     break;
                 case "SPIKER_ROW_FIRST_UPGRADE_4":
-                    //DEBUFF?
-                    targetAttack.ProjectileRange *= 1.3f;
+                    notargetAttack.ProjectileRange *= 1.5f;
+                    notargetAttack.ProjectileSpeed *= 1.5f;
                     break;
                 case "SPIKER_ROW_FIRST_UPGRADE_5":
-                    //DEBUFF?
+                    notargetAttack.ActionsPerSecond *= 2f;
                     break;
                 //ROW 2
                 case "SPIKER_ROW_SECOND_UPGRADE_1":
-                    targetAttack.ActionsPerSecond *= 1.3f;
+                    notargetAttack.ActionsPerSecond *= 1.3f;
                     break;
                 case "SPIKER_ROW_SECOND_UPGRADE_2":
-                    targetAttack.ProjectileType = ProjectileType.Missle;
-                    targetAttack.ActionsPerSecond *= 1.2f;
-                    targetAttack.ProjectileRange *= 1.4f;
-                    targetAttack.ProjectileSpeed *= 1.5f;
+                    notargetAttack.ActionsPerSecond *= 1.2f;
+                    notargetAttack.ProjectileRange *= 1.4f;
+                    notargetAttack.ProjectileSpeed *= 1.5f;
                     break;
                 case "SPIKER_ROW_SECOND_UPGRADE_3":
-                    targetAttack.ProjectileRange *= 1.4f;
-                    targetAttack.AdditionalBossDamage += 15;
-                    targetAttack.AdditionalLeadDamage += 2;
+                    notargetAttack.ProjectileRange *= 1.4f;
+                    notargetAttack.CanBreakLead = true;
+                    notargetAttack.AdditionalLeadDamage += 2;
                     break;
                 case "SPIKER_ROW_SECOND_UPGRADE_4":
-                    targetAttack.AdditionalBossDamage += 20;
-                    targetAttack.AdditionalLeadDamage += 2;
-                    targetAttack.ProjectileRange *= 1.2f;
+                    notargetAttack.AdditionalBossDamage += 10;
+                    notargetAttack.AdditionalLeadDamage += 2;
+                    notargetAttack.ProjectileRange *= 1.2f;
                     break;
                 case "SPIKER_ROW_SECOND_UPGRADE_5":
-                    targetAttack.AdditionalBossDamage += 100;
+                    notargetAttack.AdditionalBossDamage += 15;
                     break;
                 //ROW 3
                 case "SPIKER_ROW_THIRD_UPGRADE_1":
-                    targetAttack.ProjectileRange *= 1.3f;
+                    notargetAttack.ProjectileRange *= 1.3f;
                     break;
                 case "SPIKER_ROW_THIRD_UPGRADE_2":
-                    targetAttack.Damage += 1;
-                    targetAttack.ProjectilesCount += 1;
-                    targetAttack.ProjectileDegree = 30f;
+                    notargetAttack.Damage += 1;
+                    notargetAttack.ProjectilesCount += 2;
                     break;
                 case "SPIKER_ROW_THIRD_UPGRADE_3":
-                    targetAttack.ActionsPerSecond *= 1.2f;
-                    targetAttack.ProjectilesCount += 1;
-                    targetAttack.ProjectileDegree = 20f;
+                    notargetAttack.ActionsPerSecond *= 1.2f;
+                    notargetAttack.ProjectilesCount += 2;
                     break;
                 case "SPIKER_ROW_THIRD_UPGRADE_4":
-                    targetAttack.ActionsPerSecond *= 1.2f;
-                    targetAttack.Damage += 1;
+                    notargetAttack.ActionsPerSecond *= 1.2f;
+                    notargetAttack.Damage += 1;
                     break;
                 case "SPIKER_ROW_THIRD_UPGRADE_5":
-                    targetAttack.Damage += 2;
-                    targetAttack.CanSeeCamo = true;
+                    notargetAttack.Damage += 2;
+                    notargetAttack.CanSeeCamo = true;
                     break;
 
             }
@@ -182,11 +233,11 @@ namespace TowerDeffence
                     targetAttack.MaxTargets += 20;                    
                     break;
                 case "BOMBSHOOTER_ROW_FIRST_UPGRADE_4":
-                    //DEBUFF?
+                    targetAttack.Damage += 2;
                     targetAttack.ProjectileRange *= 1.3f;                    
                     break;
                 case "BOMBSHOOTER_ROW_FIRST_UPGRADE_5":
-                    //DEBUFF?
+                    targetAttack.ActionsPerSecond *= 1.5f;
                     break;
                 //ROW 2
                 case "BOMBSHOOTER_ROW_SECOND_UPGRADE_1":

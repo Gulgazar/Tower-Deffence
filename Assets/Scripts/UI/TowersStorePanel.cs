@@ -22,7 +22,6 @@ namespace TowerDeffence
             
         }
 
-        //Самому смешно, но времени исправлять нет))
         public TowerData GetTowerData(TowerType type)
         {
             return _controls.GetTowerData(type);
@@ -38,7 +37,6 @@ namespace TowerDeffence
             _controls.PointerOnUI = true;
             if(_controls.IsDragTower)
             {
-                print("UNBUILD");
                 _controls.UndoInstantiateTower();
             }
         }
@@ -48,7 +46,6 @@ namespace TowerDeffence
             _controls.PointerOnUI = false;
             if (_controls.ReadyToBuild)
             {
-                print("BUILD ");
                 _controls.PreInstantiateTower();
             }
         }

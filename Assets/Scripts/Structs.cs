@@ -23,7 +23,6 @@ namespace TowerDeffence
     {
         public string ID;
         public string Name;
-        //public Sprite Image;
         public string Description;
         public int Cost;
     }
@@ -95,7 +94,6 @@ namespace TowerDeffence
     {
         public int WaveNumber;
         public List<WaveStage> Stages;
-        //public float CooldownToNextWave;
     }
 
     [Serializable]
@@ -118,7 +116,6 @@ namespace TowerDeffence
     {
         void KillEnemy(BaseEnemyComponent enemy, int excessiveDamage = 0, BaseProjectileComponent source = null);
         BaseEnemyComponent SpawnEnemy(EnemyType enemyType, Vector3 position, int nextPoint, float distanceToNextWaypoint, bool camo);
-        //void DestroyEnemy(BaseEnemyComponent enemy);
     }
 
     public interface IProjectileHandler
